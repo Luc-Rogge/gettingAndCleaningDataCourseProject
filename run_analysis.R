@@ -16,6 +16,10 @@ merge.datasets <- function()
    
    features$selected <- grepl("-mean()", features$name, fixed = TRUE) | grepl("-std()", features$name, fixed = TRUE)
 
+   # After the selection, fix the names so that they are usable as column names in R
+   features$name <- sub("()", "", features$name, fixed = TRUE) # remove ()
+   features$name <- sub("-", ".", features$name, fixed = TRUE) # replace dashes with dots
+
 
    # Sub-function to load a dataset (id = "test" or "train")
 
@@ -105,6 +109,11 @@ summarize.dataset <- function(ds)
 
 # Bring it all together
 
-full_dataset <- merge.datasets()
+run_analysis <- function()
+{
+   # Load the full dataset
+   full_dataset <- merge.datasets()
 
-summarized_dataset <- summarize.dataset(full_dataset)
+   # Compute and return the summary
+   summarize.dataset(full_dataset)
+}
