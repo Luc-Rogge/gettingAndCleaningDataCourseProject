@@ -56,6 +56,9 @@ Both datasets (the main one and the aggregated one) have the same variables:
     
     optional additional suffix for the axis of measurement: .X , .Y, .Z
 
+    P.S. This assignment was due for Week3 but we have been adviced only on Week4 
+    that it was better no to use dots in variable names. I'll do it right the next time ;) 
+
     leading to the following name combinations for the 66 selected measures:
     * tBodyAcc.mean.X
     * tBodyAcc.mean.Y
